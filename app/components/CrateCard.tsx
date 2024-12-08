@@ -127,7 +127,13 @@ export default function CrateCard({ type, isSelected, onClick, productId, onStat
       )}
 
       {isSelected && hasMinBalance ? (
-        <Checkout productId={productId} onStatus={onStatus}>
+        <Checkout 
+          productId={productId} 
+          onStatus={(status) => {
+            console.log('💳 Checkout Status:', status);
+            onStatus(status);
+          }}
+        >
           <CheckoutButton
             className="w-full bg-gradient-to-r from-csgo-blue to-csgo-purple-light
                      py-3 px-6 rounded

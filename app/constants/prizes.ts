@@ -98,6 +98,6 @@ export const PRICES: Prices = {
 };
 
 export const PRODUCT_IDS = {
-  standard: '102348b6-17fc-42b1-a28b-4cdbe62c5985',
-  premium: '329ed307-d24b-4e51-8669-5ddc3afe48e7'
+  standard: process.env.NEXT_PUBLIC_STANDARD_PRODUCT_ID || '102348b6-17fc-42b1-a28b-4cdbe62c5985',
+  premium: process.env.NEXT_PUBLIC_PREMIUM_PRODUCT_ID || '329ed307-d24b-4e51-8669-5ddc3afe48e7'
 }; 
