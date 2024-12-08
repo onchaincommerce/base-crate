@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getPrizeResult } from '../../../utils/prizeStore';
+import { getPrize } from '../../../utils/prizeStore';
 
 export async function GET(
   req: Request,
@@ -8,7 +8,7 @@ export async function GET(
   const { chargeId } = params;
   console.log('🔍 Checking prize status:', chargeId);
 
-  const result = getPrizeResult(chargeId);
+  const result = getPrize(chargeId);
   console.log('📦 Found result:', result);
 
   if (!result) {
