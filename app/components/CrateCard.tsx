@@ -127,19 +127,13 @@ export default function CrateCard({ type, isSelected, onClick, productId, onStat
 
       {isSelected && hasMinBalance ? (
         <Checkout productId={productId} onStatus={onStatus}>
-          <CheckoutButton>
-            {({ onClick }) => (
-              <button
-                onClick={onClick}
-                className="w-full bg-gradient-to-r from-csgo-blue to-csgo-purple-light
-                         py-3 px-6 rounded
-                         text-white font-bold uppercase text-sm tracking-wider
-                         hover:brightness-110 transition-all"
-              >
-                Pay with USDC
-              </button>
-            )}
-          </CheckoutButton>
+          <CheckoutButton
+            coinbaseBranded={false}
+            className="w-full bg-gradient-to-r from-csgo-blue to-csgo-purple-light
+                     py-3 px-6 rounded
+                     text-white font-bold uppercase text-sm tracking-wider
+                     hover:brightness-110 transition-all"
+          />
         </Checkout>
       ) : (
         <button
