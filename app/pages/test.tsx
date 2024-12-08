@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { transferUSDC } from '../utils/usdcTransfer';
 import { selectRandomPrize } from '../utils/prizeSelection';
-import { STANDARD_PRIZES, PREMIUM_PRIZES } from '../constants/prizes';
+import { STANDARD_PRIZES } from '../constants/prizes';
 
 export default function TestPage() {
   const [result, setResult] = useState<string>('');

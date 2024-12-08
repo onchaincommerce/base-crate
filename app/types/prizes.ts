@@ -17,4 +17,13 @@ export interface CratePrice {
 export interface Prices {
   standard: CratePrice;
   premium: CratePrice;
+}
+
+export interface PrizeResult {
+  prize: {
+    name: string;
+    value: number;
+    rarity: string;
+  };
+  txHash: string;
 } 

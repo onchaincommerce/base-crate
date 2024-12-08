@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   ConnectWallet,
   Wallet,
@@ -21,9 +22,7 @@ import CrateCard from './components/CrateCard';
 import SimulationButton from './components/SimulationButton';
 import FloatingIcons from './components/FloatingIcons';
 import PrizeModal from './components/PrizeModal';
-import { onPrizeResult } from './utils/eventStore';
-import Image from 'next/image';
-import { getPrize, clearPrize } from './utils/prizeStore';
+import { PrizeResult } from './types/prizes';
 
 type CrateType = 'standard' | 'premium' | null;
 
@@ -139,6 +138,7 @@ export default function App() {
                     width={64}
                     height={64}
                     className="mx-auto"
+                    priority
                   />
                 </div>
                 <div className="text-csgo-blue-light font-bold">
