@@ -26,23 +26,6 @@ import { PrizeResult } from './types/prizes';
 
 type CrateType = 'standard' | 'premium' | null;
 
-const metadata = {
-  name: 'Base Crates',
-  description: 'Open crates on Base and win USDC prizes',
-  url: 'https://basecrates.com',
-  icon: 'https://basecrates.com/icon.png',
-};
-
-interface PrizeState {
-  stage: 'payment' | 'selecting' | 'distributing' | 'complete' | null;
-  prize: {
-    name: string;
-    value: number;
-    rarity: string;
-  } | null;
-  txHash: string;
-}
-
 export default function App() {
   const [selectedCrate, setSelectedCrate] = useState<CrateType>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -82,7 +65,7 @@ export default function App() {
       <header className="fixed top-0 right-0 p-4 z-50 flex items-center gap-4">
         <SimulationButton />
         <div className="bg-csgo-darker border border-csgo-gray-dark/50 rounded">
-          <Wallet metadata={metadata}>
+          <Wallet>
             <ConnectWallet className="!transition-none">
               <div className="flex items-center px-4 py-2">
                 <Avatar className="h-6 w-6 mr-2" />
