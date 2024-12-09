@@ -2,4 +2,8 @@
 export interface CheckoutButtonProps {
   className?: string;
   onClick?: () => void;
+}
+
+export interface CheckoutRenderProps {
+  showModal: () => void;
 } 
