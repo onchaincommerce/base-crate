@@ -131,6 +131,7 @@ export default function CrateCard({ type, isSelected, onClick, productId, onStat
           productId={productId} 
           onStatus={(status) => {
             console.log('💳 Payment Status:', status);
+            console.log('🔑 Product ID:', productId);
             onStatus(status);
           }}
         >
