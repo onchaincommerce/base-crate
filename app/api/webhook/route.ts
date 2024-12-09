@@ -7,7 +7,7 @@ import { transferUSDC } from '../../utils/usdcTransfer';
 export async function POST(req: Request) {
   try {
     const data = await req.json();
-    console.log('📦 Webhook received:', data);
+    console.log('📦 Webhook received:', JSON.stringify(data, null, 2));
 
     // Verify it's a charge:pending event
     if (data.event.type === 'charge:pending') {
