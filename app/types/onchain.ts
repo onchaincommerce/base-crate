@@ -9,4 +9,10 @@ export interface CheckoutButtonProps {
 
 export interface CheckoutRenderProps {
   showModal: () => void;
+}
+
+export interface CheckoutProps {
+  productId: string;
+  onStatus: (status: any) => void;
+  children: (props: CheckoutRenderProps) => ReactNode;
 } 
