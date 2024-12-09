@@ -128,18 +128,15 @@ export default function CrateCard({ type, isSelected, onClick, productId, onStat
 
       {isSelected && hasMinBalance ? (
         <Checkout productId={productId} onStatus={onStatus}>
-          {(props: CheckoutRenderProps) => (
-            <button
-              onClick={props.showModal}
-              type="button"
-              className="w-full bg-gradient-to-r from-csgo-blue to-csgo-purple-light
-                       py-3 px-6 rounded
-                       text-white font-bold uppercase text-sm tracking-wider
-                       hover:brightness-110 transition-all"
-            >
-              Pay ${price.toFixed(2)} USDC
-            </button>
-          )}
+          <CheckoutButton
+            className="w-full bg-gradient-to-r from-csgo-blue to-csgo-purple-light
+                     py-3 px-6 rounded
+                     text-white font-bold uppercase text-sm tracking-wider
+                     hover:brightness-110 transition-all"
+            onClick={() => console.log('Initiating payment...')}
+          >
+            Pay ${price.toFixed(2)} USDC
+          </CheckoutButton>
         </Checkout>
       ) : (
         <button
